@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 995
-y 556
+x 644
+y 654
 w 800
 h 240
 font "helvetica-medium-r-18.0"
@@ -385,5 +385,85 @@ indicatorPv "$(DEVICE):TRG$(NN):LCLS2ENABLE"
 3d
 font "helvetica-medium-r-12.0"
 objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 404
+y 131
+w 80
+h 14
+controlPv "$(DEVICE):TRG$(NN):DELAYTICKS"
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 5
+limitsFromDb
+nullColor index 0
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 525
+y 131
+w 80
+h 14
+controlPv "$(DEVICE):TRG$(NN):WIDTHTICKS"
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 5
+limitsFromDb
+nullColor index 0
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 402
+y 111
+w 70
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Delay (ticks)"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 522
+y 111
+w 68
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Width (ticks)"
+}
+autoSize
 endObjectProperties
 
