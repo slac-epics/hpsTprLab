@@ -1,0 +1,138 @@
+tprTrigger
+----------
+
+The tprTrigger is an epics module which provides a standard PV interface
+for trigger configuration and monitoring for TimingCore
+
+
+tprPattern
+----------
+
+The tprPattern is an epics module which provides a standard PV interface
+to set up soft event and mintoring timing pattern status for LCLS1.
+This module work with TimingCore firmware, and it also provides 
+event module compatible API and TimingAPI.
+
+Note) It is an early day version of tprPattern, we only provides 
+BSA callback registration API in TimingApi now. We will extend to support
+all of TimingApi soon.
+
+
+How to build an ioc with tprTrigger and tprPattern module
+---------------------------------------------------------
+
+1. tprTrigger and tprPattern both require "hpstpr" API layer.
+configure/CONFIG_SITE.Common.<platform> should have the followings for the "hpstpr" API.
+
+HPSTPR_PACKAGE_NAME=timing/hpsTpr
+HPSTPR_VERSION=hpsTpr-git
+HPSTPR_ARCH=$(LINUXRT_BUILDROOT_VERSION)-x86_64
+HPSTPR=$(PACKAGE_AREA)/$(HPSTPR_PACKAGE_NAME)/$(HPSTPR_VERSION)/$(HPSTPR_ARCH)
+HPSTPR_LIB     = $(HPSTPR)/lib
+HPSTPR_INCLUDE = $(HPSTPR)/include
+
+
+2. tprTrigger module
+configure/RELEASE should have the followings for "tprTrigger" module.
+
+TPRTRIGGER_MODULE_VERSION=tprTrigger-git
+TPRTRIGGER=$(EPICS_MODULES)/tprTrigger/$(TPRTRIGGER_MODULE_VERSION)
+
+
+3. tprPattern module
+configure/RELEASE should have the followings for "tprPattern" module.
+
+TPRPATTERN_MODULE_VERSION=tprPattern-git
+TPRPATTERN=$(EPICS_MODULES)/tprPattern/$(TPRPATTERN_MODULE_VERSION)
+
+
+4. Other modules and API
+The tprTrigger and tprPattern assume the following API and modules are included in the application.
+
+asyn R4.31-0.1.0
+yamlLoader R1.0.3
+timingApi timingApi-git
+
+cpsw/framework R3.5.branch
+yaml-cpp-0.5.3
+boost 1.63.0
+hpsTpr-git
+
+
+5. how to build binarary
+
+The "Makefile" in source directory should include the following DBD files.
+
+# DBD files for tprTrigger and tprPattern
+<your_application>_DBD += tprTriggerAsynDriver.dbd
+<your_application>_DBD += tprPatternAsynDriver.dbd
+
+
+The "Makefile" in source directory should include the follwing library files.
+
+# Library for tprTrigger and tprPattern
+<your_application>_LIBS += tprTrigger
+<your_application>_LIBS += tprPattern
+
+The "Makefile" in source directory need to include hpstpr API layer.
+
+hpstpr_DIR = $(HPSTPR_LIB)
+<your_applicaiton>_LIBS += hpstpr
+
+
+
+The "Makefile" in Db directory need to install database template for tprTrigger and tprPattern
+as the followings.
+
+# Install Database for tprTrigger module
+DB_INSTALLS += $(TPRTRIGGER)/db/tprTrg.db
+
+# Install Database for tprPattern module
+DB_INSTALLS += $(TPRPATTERN)/db/tprPattern.db
+
+
+
+
+How to run the ioc with tprTrigger and tprPattern
+--------------------------------------------------
+
+1. how to load database template for tprTrigger and tprPattern
+
+the template has two macros: DEV and PORT. 
+DEV - prefix for PV name (ex, TPR:SYS2:0)
+PORT - port name for asyn port driver, tprTrigger module has port name "trig", tprPattern module has port name "pattern".
+
+Here is an example to load up the template.
+
+epicsEnvSet("IOC_PV", "TPR:SYS2:0")
+dbLoadRecords("db/tprTrg.db",     "DEV=${IOC_PV}, PORT=trig")
+dbLoadRecords("db/tprPattern.db", "DEV=${IOC_PV}, PORT=pattern")
+
+
+
+2. how to initialize the driver
+
+Both tprTrigger and tprPattern assume yamlLoader driver already load up the register hierarchy as the followings.
+ex) 
+cpswLoadYamlFile("000TopLevel.yaml", "NetIODev", "", "10.0.3.105")
+
+After loading the hierarchy, we can configure tprTrigger driver and tprPattern driver with the following commands.
+
+tprTriggerAsynDriverConfigure(<asyn port name>, <path for AmcCarriercore>)
+tprPatternAsynDriverConfigure(<asyn port name>, <path for AmcCarrierCore>, <path for timing stream>)
+
+Here are a typical example.
+ex)
+tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierEmpty/AmcCarrierCore")
+tprPatternAsynDriverConfigure("pattern", "mmio/AmcCarrierEmpty/AmcCarrierCore", "tstream")
+
+
+3. How to bring up test screen
+
+Please, check up a scrip in <TOP>/tprApp/edm/launch_edm
+
+
+
+
+
+
