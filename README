@@ -132,7 +132,13 @@ tprPatternAsynDriverConfigure("pattern", "mmio/AmcCarrierEmpty/AmcCarrierCore", 
 Please, check up a scrip in <TOP>/tprApp/edm/launch_edm
 
 
+4. Timing Stream
 
+The tprPattern assumes it receives LCLS1 timing stream from UDP port 8197.
+The UDP port should be described in yaml file.
+The firmware assumes, it receives beacon packet periodically (less than 3 second interval) from software.
+If firmware doesn't receive the packet, firmware gives up to send stream to the destination.
+Thus, we need to put "pollSec: 1" for the stream definition in the yaml file.
 
 
 
