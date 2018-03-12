@@ -1,0 +1,59 @@
+Integration with BsaCore
+------------------------
+
+To implement BSA functions in ioc,
+we need to integrate BsaCore and DataSink into the ioc.
+
+
+1. Integration BsaCore into the ioc
+
+The configure/RELEASE file should have setting for BSACORE.
+
+BSACORE_MODULE_VERSION=BsaCore-git
+BSACORE=/afs/slac/g/lcls/epics/iocTop/users/khkim/LCLS2Timing/t/temp/BsaCore/$(BSACORE_MODULE_VERSION)
+
+Note, currently I tested BsaCore in my sandbox. There are some build issue in Makefile. 
+Till is goingto release new an official version. In the meanwhile, we can use my sandbox version BsaCore
+
+The <application>App/src/Makefile shoud have setting for BsaCore DBD and library.
+
+<application>_DBD +=  bsaCore.dbd
+<application>_LIBS += BsaCore
+
+
+2. Integration BsaSinker (PV interface)
+
+Till implemented the Bsa Sinker (PV interface) in event module. 
+We need to include the event module as the followings:
+
+In configure/RELEASE file, we need to set EVENT module as the followings:
+
+EVENT_MODULE_VERSION=new_bsa_core
+EVENT=/afs/slac/g/lcls/epics/iocTop/users/khkim/LCLS2Timing/t/temp/event/$(EVENT_MODULE_VERSION)
+
+Note, Till is not release his bsa_core branch evnet module yet. Until, Till release an official version
+we can use my sancbox version.
+
+In <application>App/src/Makefile, we need to include bsa.dbd and eventBsaSupport library as the followings:
+
+<application>_DBD += bsa.dbd
+<application>_LIBS += eventBsaSupport
+
+
+Note, if you have a linker error which is related with undefined symbol, you can switch the order of library names.
+Please, switch the order of <>_LIBS definition and try again.
+
+3. Integration with BSA PV
+
+The event module provide bsa PV interface.
+We need to install the database template in the ioc. 
+
+DB_INSTALLS += $(EVENT)/db/bsaATTREdef.db
+
+The hpsTprLab application has an example for bsa database substitution file.
+Please, check up the following file:
+
+$TOP/tprApp/Db/bsaTest.substitutions
+
+
+
