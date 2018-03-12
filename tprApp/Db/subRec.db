@@ -5,4 +5,5 @@ record(sub, "$(DEVICE):$(NAME)")
     field(EVNT, "$(EVNT)")
     field(MDEL, "-1")
     field(TSE,  "$(TSE)")
+    field(FLNK, "$(FLNK)")
 }

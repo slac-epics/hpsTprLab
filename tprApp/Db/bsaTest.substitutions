@@ -1,0 +1,14 @@
+file subRec.db
+{
+   pattern {        DEVICE,       NAME,      EVNT,    TSE,   FLNK }
+           {  "TPR:SYS2:0",  "EV40PID",      "40",    "-2",  "TPR:SYS2:0:EFEV40PID"   }
+           {  "TPR:SYS2:0",  "EV41PID",      "41",    "-2",  "TPR:SYS2:0:EFEV41PID"   }   
+}
+
+file bsaATTREdef.db
+{
+  pattern {   D         ,     ATTR , I                          , EG ,      HO  , LO , PR , AD  ,  LNK             }
+          { "TPR:SYS2:0", "EV40PID", "TPR:SYS2:0:EV40PID" , "PulseID",      ""  , "" , "" , ""  ,  ""              }
+          { "TPR:SYS2:0", "EV41PID", "TPR:SYS2:0:EV41PID",  "PulseID",      ""  , "" , "" , ""  ,  ""              }
+}
+
