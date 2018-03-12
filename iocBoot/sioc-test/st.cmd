@@ -59,6 +59,8 @@ dbLoadRecords("db/subRec.db", "DEVICE=$(IOC_PV),NAME=FIDTEST_TS4,TSE=-2,EVNT=FID
 dbLoadRecords("db/subRec.db", "DEVICE=$(IOC_PV),NAME=FIDTEST_TS5,TSE=-2,EVNT=FIDTEST_TS5")
 dbLoadRecords("db/subRec.db", "DEVICE=$(IOC_PV),NAME=FIDTEST_TS6,TSE=-2,EVNT=FIDTEST_TS6")
 
+dbLoadRecords("db/bsaTest.db")
+
 
 
 # =====================================================================

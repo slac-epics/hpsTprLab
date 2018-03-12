@@ -58,6 +58,8 @@ tpr_DBD += yamlLoader.dbd
 # DBD files for tprTrigger and tprPattern
 tpr_DBD += tprTriggerAsynDriver.dbd
 tpr_DBD += tprPatternAsynDriver.dbd
+tpr_DBD += bsaCore.dbd
+tpr_DBD += bsa.dbd
 
 
 
@@ -117,8 +119,10 @@ tpr_SRCS_vxWorks += -nil-
 
 # Library for tprTrigger and tprPattern
 
+tpr_LIBS += eventBsaSupport
 tpr_LIBS += tprTrigger
 tpr_LIBS += tprPattern
+tpr_LIBS += BsaCore
 
 
 
