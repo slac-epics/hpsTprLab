@@ -61,7 +61,8 @@ tpr_DBD += tprPatternAsynDriver.dbd
 tpr_DBD += bsaCore.dbd
 tpr_DBD += bsa.dbd
 
-
+# crossbarControl
+tpr_DBD += crossbarControl.dbd
 
 # test code
 tpr_DBD += subRec.dbd
@@ -130,7 +131,7 @@ tpr_LIBS += BsaCore
 tpr_LIBS += yamlLoader
 tpr_LIBS += asyn
 
-
+tpr_LIBS += crossbarControl
 
 cpsw_DIR = $(CPSW_FRAMEWORK_LIB)
 tpr_LIBS += cpsw
