@@ -56,6 +56,8 @@ tpr_DBD += yamlLoader.dbd
 
 
 # DBD files for tprTrigger and tprPattern
+tpr_DBD += crossbarControl.dbd
+tpr_DBD += ATCACommon.dbd
 tpr_DBD += tprTriggerAsynDriver.dbd
 tpr_DBD += tprPatternAsynDriver.dbd
 tpr_DBD += bsaCore.dbd
@@ -123,6 +125,7 @@ tpr_SRCS_vxWorks += -nil-
 tpr_LIBS += eventBsaSupport
 tpr_LIBS += tprTrigger
 tpr_LIBS += tprPattern
+tpr_LIBS += ATCACommon
 tpr_LIBS += BsaCore
 
 
@@ -130,22 +133,6 @@ tpr_LIBS += BsaCore
 
 tpr_LIBS += yamlLoader
 tpr_LIBS += asyn
-
-tpr_LIBS += crossbarControl
-
-cpsw_DIR = $(CPSW_FRAMEWORK_LIB)
-tpr_LIBS += cpsw
-
-yaml-cpp_DIR  = $(YAML_LIB)
-tpr_LIBS += yaml-cpp
-
-
-hpstpr_DIR = $(HPSTPR_LIB)
-tpr_LIBS += hpstpr
-
-#tpr_LIBS += yamlLoader
-
-#tpr_LIBS += asyn
 
 # Needed to link in iocAdmin support
 tpr_LIBS += devIocStats
@@ -160,6 +147,34 @@ tpr_LIBS += caPutLog
 tpr_LIBS += $(CEXP_LIBS)
 
 
+# =====================================================
+# Path to "NON EPICS" External PACKAGES: USER INCLUDES
+#======================================================
+USR_INCLUDES = -I$(BOOST_INCLUDE) -I$(CPSW_FRAMEWORK_INCLUDE) -I$(YAML_INCLUDE) -I$(LLRFAMC_INCLUDE) -I$(YAMLREADER_INCLUDE) -I$(DEVICELIB_INCLUDE)
+# =====================================================
+
+#======================================================
+# PATH TO "NON EPICS" EXTERNAL PACKAGES: USER LIBRARIES
+#======================================================
+cpsw_DIR = $(CPSW_FRAMEWORK_LIB)
+boost_system_DIR = $(BOOST_LIB)
+yaml-cpp_DIR = $(YAML_LIB)
+hpstpr_DIR = $(HPSTPR_LIB)
+bsa_DIR = $(BSA_LIB)
+commonATCA_DIR = $(COMMONATCA_LIB)
+#llrfHls_DIR = $(LLRFHLS_LIB)
+#commonRF_DIR = $(COMMONRF_LIB)
+#llrfAmc_DIR = $(LLRFAMC_LIB)
+deviceLib_DIR = $(DEVICELIB_LIB)
+yamlReader_DIR  = $(YAMLREADER_LIB)
+# =====================================================
+
+# ======================================================
+# LINK "NON EPICS" EXTERNAL PACKAGE LIBRARIES STATICALLY
+#=======================================================
+# USR_LIBS_Linux += cpsw boost_system yaml-cpp hpstpr bsa commonATCA commonRF llrfHls llrfAmc yamlReader deviceLib
+USR_LIBS_Linux += cpsw boost_system yaml-cpp hpstpr bsa commonATCA yamlReader deviceLib
+# ======================================================
 
 
 
