@@ -1,0 +1,15 @@
+#==============================================================
+#
+#  Name: RELEASE_NOTES
+#
+#  Rem:  This files describes release notes for
+#        the XXX IOC Application.
+#
+#  Auth: xx-Dec-2012, XXX         (xxx)
+#  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
+#--------------------------------------------------------------
+#
+
+R1.0.0     Sep 7, 2021   Kukhee Kim (khkim)
+           - prepare initial release (support both PCIe TPR and ATCA Timing Core)
+           - support firmware (PCIe TPR) d381d3e
