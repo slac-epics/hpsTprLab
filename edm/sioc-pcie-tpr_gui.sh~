@@ -1,0 +1,7 @@
+#edm -x -m "DEVICE=TPR:SYS2:0" tprMain_final.edl &
+#edm -x -m "DEVICE=TPR:SYS2:0" tprPatternDiag.edl &
+#edm -x -m "DEVICE=TPR:SYS2:0" tprPatternEvent.edl &
+#
+edm -eolc -x -m "DEVICE=SIOC:B84:TR01:00,LOCA=B84,IOC_UNIT=TR01,INST=00" tprMain_final.edl tprPatternEvent.edl &
+#
+

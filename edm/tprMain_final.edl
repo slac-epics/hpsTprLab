@@ -1,0 +1,878 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 1952
+y 128
+w 528
+h 460
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+endScreenProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 169
+y 27
+w 81
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "FPGA Version"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 213
+y 43
+w 37
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Uptime"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 138
+y 61
+w 112
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Start Frame Counter"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 141
+y 81
+w 109
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "End Frame Counter"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 157
+y 101
+w 93
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Fiducial Counter"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 145
+y 119
+w 105
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "CRC Error Counter"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 149
+y 136
+w 101
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "RX Clock Counter"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 168
+y 157
+w 82
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "RX Link Status"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 176
+y 175
+w 74
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Version Error"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 168
+y 195
+w 82
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Frame Version"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 258
+y 27
+w 80
+h 14
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):FPGAVER"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+autoHeight
+fieldLen "8"
+nullColor index 0
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 258
+y 45
+w 80
+h 14
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):UPTIME"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+autoHeight
+fieldLen "8"
+nullColor index 0
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 258
+y 64
+w 80
+h 14
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):SOFCNT"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+autoHeight
+fieldLen "8"
+nullColor index 0
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 258
+y 82
+w 80
+h 14
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):EOFCNT"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+autoHeight
+fieldLen "8"
+nullColor index 0
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 258
+y 101
+w 80
+h 14
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):FIDCNT"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+autoHeight
+fieldLen "8"
+nullColor index 0
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 258
+y 118
+w 80
+h 14
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):CRCERRCNT"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+autoHeight
+fieldLen "8"
+nullColor index 0
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 258
+y 136
+w 80
+h 14
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):RXCLKCNT"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+autoHeight
+fieldLen "8"
+nullColor index 0
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 258
+y 156
+w 80
+h 14
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):RXLNKSTATUS"
+format "string"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+autoHeight
+fieldLen "8"
+nullColor index 0
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 258
+y 173
+w 80
+h 14
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):VERERR"
+format "string"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+autoHeight
+fieldLen "8"
+nullColor index 0
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 258
+y 192
+w 80
+h 14
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):FRAMEVER"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+autoHeight
+fieldLen "8"
+nullColor index 0
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 103
+y 232
+w 152
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "LCLS1 master delay (nsec)"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 102
+y 253
+w 152
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "LCLS2 master delay (nsec)"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 17
+y 274
+w 237
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Application Clock Speed (MHz) for LCLS1"
+}
+autoSize
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 260
+y 229
+w 80
+h 18
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):TREF"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+editable
+autoHeight
+motifWidget
+limitsFromDb
+precision 0
+nullColor index 0
+updatePvOnDrop
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 260
+y 250
+w 80
+h 18
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):MSGDLY"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+editable
+autoHeight
+motifWidget
+limitsFromDb
+precision 0
+nullColor index 0
+updatePvOnDrop
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 260
+y 271
+w 80
+h 18
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):SYS0_CLK"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+editable
+autoHeight
+motifWidget
+limitsFromDb
+precision 0
+nullColor index 0
+updatePvOnDrop
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 126
+y 330
+w 88
+h 28
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Mode Selection"
+  "(LCLS1/LCLS2)"
+}
+autoSize
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 226
+y 332
+w 104
+h 24
+fgColor index 14
+bgColor index 4
+selectColor index 41
+inconsistentColor index 14
+topShadowColor index 2
+botShadowColor index 14
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):MODE"
+indicatorPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):MODE"
+font "helvetica-medium-r-12.0"
+orientation "horizontal"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 112
+y 429
+w 120
+h 20
+fgColor index 14
+bgColor index 4
+topShadowColor index 2
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+buttonLabel "Channel Screens"
+numPvs 4
+numDsps 16
+displayFileName {
+  0 "tprChannel"
+  1 "tprChannel"
+  2 "tprChannel"
+  3 "tprChannel"
+  4 "tprChannel"
+  5 "tprChannel"
+  6 "tprChannel"
+  7 "tprChannel"
+  8 "tprChannel"
+  9 "tprChannel"
+  10 "tprChannel"
+  11 "tprChannel"
+  12 "tprChannel"
+  13 "tprChannel"
+  14 "tprChannel"
+  15 "tprChannel"
+}
+menuLabel {
+  0 "Channel 0"
+  1 "Channel 1"
+  2 "Channel 2"
+  3 "Channel 3"
+  4 "Channel 4"
+  5 "Channel 5"
+  6 "Channel 6"
+  7 "Channel 7"
+  8 "Channel 8"
+  9 "Channel 9"
+  10 "Channel 10"
+  11 "Channel 11"
+  12 "Channel 12"
+  13 "Channel 13"
+  14 "Channel 14"
+  15 "Channel 15"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "NN=00"
+  1 "NN=01"
+  2 "NN=02"
+  3 "NN=03"
+  4 "NN=04"
+  5 "NN=05"
+  6 "NN=06"
+  7 "NN=07"
+  8 "NN=08"
+  9 "NN=09"
+  10 "NN=10"
+  11 "NN=11"
+  12 "NN=12"
+  13 "NN=13"
+  14 "NN=14"
+  15 "NN=15"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 258
+y 428
+w 120
+h 20
+fgColor index 14
+bgColor index 4
+topShadowColor index 2
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+buttonLabel "Trigger Screens"
+numPvs 4
+numDsps 16
+displayFileName {
+  0 "tprTrigger"
+  1 "tprTrigger"
+  2 "tprTrigger"
+  3 "tprTrigger"
+  4 "tprTrigger"
+  5 "tprTrigger"
+  6 "tprTrigger"
+  7 "tprTrigger"
+  8 "tprTrigger"
+  9 "tprTrigger"
+  10 "tprTrigger"
+  11 "tprTrigger"
+  12 "tprTrigger"
+  13 "tprTrigger"
+  14 "tprTrigger"
+  15 "tprTrigger"
+}
+menuLabel {
+  0 "Trigger 0"
+  1 "Trigger 1"
+  2 "Trigger 2"
+  3 "Trigger 3"
+  4 "Trigger 4"
+  5 "Trigger 5"
+  6 "Trigger 6"
+  7 "Trigger 7"
+  8 "Trigger 8"
+  9 "Trigger 9"
+  10 "Trigger 10"
+  11 "Trigger 11"
+  12 "Trigger 12"
+  13 "Trigger 13"
+  14 "Trigger 14"
+  15 "Trigger 15"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "NN=00"
+  1 "NN=01"
+  2 "NN=02"
+  3 "NN=03"
+  4 "NN=04"
+  5 "NN=05"
+  6 "NN=06"
+  7 "NN=07"
+  8 "NN=08"
+  9 "NN=09"
+  10 "NN=10"
+  11 "NN=11"
+  12 "NN=12"
+  13 "NN=13"
+  14 "NN=14"
+  15 "NN=15"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 18
+y 295
+w 237
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Application Clock Speed (MHz) for LCLS2"
+}
+autoSize
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 261
+y 292
+w 80
+h 18
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):SYS2_CLK"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+editable
+autoHeight
+motifWidget
+limitsFromDb
+precision 0
+nullColor index 0
+updatePvOnDrop
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 84
+y 367
+w 133
+h 42
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "UED Special Mode"
+  "(Backward Compatible /"
+  "UED special)"
+}
+autoSize
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 226
+y 371
+w 104
+h 24
+fgColor index 14
+bgColor index 4
+selectColor index 41
+inconsistentColor index 14
+topShadowColor index 2
+botShadowColor index 14
+controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):UEDSPECIAL"
+indicatorPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):UEDSPECIAL"
+font "helvetica-medium-r-12.0"
+orientation "horizontal"
+endObjectProperties
+
