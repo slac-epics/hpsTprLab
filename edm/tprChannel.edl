@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1816
-y 65
+x 1159
+y 656
 w 800
 h 280
 font "helvetica-medium-r-18.0"
@@ -550,6 +550,26 @@ bgColor index 0
 useDisplayBg
 value {
   "LCLS2"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 323
+y 7
+w 91
+h 21
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(DEVICE)"
 }
 autoSize
 endObjectProperties

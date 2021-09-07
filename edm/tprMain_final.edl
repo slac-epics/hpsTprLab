@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1952
-y 128
+x 1045
+y 200
 w 528
 h 460
 font "helvetica-medium-r-18.0"
@@ -874,5 +874,25 @@ controlPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):UEDSPECIAL"
 indicatorPv "TPR:$(LOCA):$(IOC_UNIT):$(INST):UEDSPECIAL"
 font "helvetica-medium-r-12.0"
 orientation "horizontal"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 6
+y 7
+w 91
+h 21
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(DEVICE)"
+}
+autoSize
 endObjectProperties
 
