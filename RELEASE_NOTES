@@ -10,6 +10,17 @@
 #--------------------------------------------------------------
 #
 
-R1.0.0     Sep 7, 2021   Kukhee Kim (khkim)
+R1.0.0     Sep 8, 2021   Kukhee Kim (khkim)
            - prepare initial release (support both PCIe TPR and ATCA Timing Core)
            - support firmware (PCIe TPR) d381d3e
+
+           PCIe TPR test iocs
+           - example for 2 PCIe TPRs in a single ioc
+             iocBoot/sioc-pcie-tpr
+
+           - example for magnet ioc (1 PCIe TPR in a single ioc) 
+             iocBoot/sioc-diag0-ts01
+             iocBoot/sioc-sph-ts01
+             iocBoot/sioc-sps-ts01
+
+             
