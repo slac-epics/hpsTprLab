@@ -108,17 +108,6 @@ cd ${TOP}
 crossbarControlAsynDriverConfigure("crossbar0", "PCIe:/mmio/SfpXbar", "root_0")
 crossbarControlAsynDriverConfigure("crossbar1", "PCIe:/mmio/SfpXbar", "root_1")
 
-# Since the crossbar driver has been developed for the ATCA system
-# the crossbar options have different meaning on PCIe TPR
-# Please, just set up as the followings to make PCIe TPR works
-
-# crossbarControl("BP",      "LCLS1", "root_0")
-# crossbarControl("RTM_OUT1", "FPGA", "root_0")
-
-# crossbarControl("BP",      "LCLS1", "root_1")
-# crossbarControl("RTM_OUT1", "FPGA", "root_1")
-
-
 # ====================================
 # Setup TPG Driver
 # ====================================
@@ -142,8 +131,3 @@ caPutLogShow(2)
 ## Start any sequence programs
 #seq sncExample,"user=khkimHost"
 
-
-epicsThreadSleep(1.)
-#registerFiducialTest2Function
-#registerEdefTestFunction
-#registerBsaCallbackFunction
