@@ -61,14 +61,14 @@ tpr_DBD += ATCACommon.dbd
 tpr_DBD += tprTriggerAsynDriver.dbd
 tpr_DBD += tprPatternAsynDriver.dbd
 tpr_DBD += bsaCore.dbd
-tpr_DBD += bsa.dbd
+
 
 # crossbarControl
 tpr_DBD += crossbarControl.dbd
 
 # test code
-tpr_DBD += subRec.dbd
-tpr_DBD += fiducialTest.dbd
+#tpr_DBD += subRec.dbd
+#tpr_DBD += fiducialTest.dbd
 
 # If you don't have an EVR comment the following two lines:
 #tpr_DBD += evrSupport.dbd
@@ -77,16 +77,10 @@ tpr_DBD += fiducialTest.dbd
 # ======================================================================
 # <name>_registerRecordDeviceDriver.cpp will be created from <name>.dbd
 tpr_SRCS += tpr_registerRecordDeviceDriver.cpp
-#tpr_SRCS += tpgAsynDriver.cpp
-#tpr_SRCS += tpgSequencer.cpp
-#tpr_SRCS += tpgBsaEdef.cpp
-#tpr_SRCS += tpgRmEdef.cpp
-#tpr_SRCS += tpgBsaPoll.cpp
-#tpr_SRCS += tpgDiagWf.cpp
 
 # test code
-tpr_SRCS += subRec.cpp
-tpr_SRCS += fiducialTest.cpp
+#tpr_SRCS += subRec.cpp
+#tpr_SRCS += fiducialTest.cpp
 
 
 # ===========================================================
@@ -122,11 +116,10 @@ tpr_SRCS_vxWorks += -nil-
 
 # Library for tprTrigger and tprPattern
 
-tpr_LIBS += eventBsaSupport
 tpr_LIBS += tprTrigger
 tpr_LIBS += tprPattern
-tpr_LIBS += ATCACommon
 tpr_LIBS += BsaCore
+tpr_LIBS += ATCACommon
 
 
 
@@ -162,9 +155,6 @@ yaml-cpp_DIR = $(YAML_LIB)
 hpstpr_DIR = $(HPSTPR_LIB)
 bsa_DIR = $(BSA_LIB)
 commonATCA_DIR = $(COMMONATCA_LIB)
-#llrfHls_DIR = $(LLRFHLS_LIB)
-#commonRF_DIR = $(COMMONRF_LIB)
-#llrfAmc_DIR = $(LLRFAMC_LIB)
 deviceLib_DIR = $(DEVICELIB_LIB)
 yamlReader_DIR  = $(YAMLREADER_LIB)
 # =====================================================
@@ -172,8 +162,7 @@ yamlReader_DIR  = $(YAMLREADER_LIB)
 # ======================================================
 # LINK "NON EPICS" EXTERNAL PACKAGE LIBRARIES STATICALLY
 #=======================================================
-# USR_LIBS_Linux += cpsw boost_system yaml-cpp hpstpr bsa commonATCA commonRF llrfHls llrfAmc yamlReader deviceLib
-USR_LIBS_Linux += cpsw boost_system yaml-cpp hpstpr bsa commonATCA yamlReader deviceLib
+USR_LIBS_Linux += cpsw boost_system yaml-cpp hpstpr commonATCA yamlReader deviceLib
 # ======================================================
 
 
