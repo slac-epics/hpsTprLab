@@ -11,8 +11,8 @@ include $(TOP)/configure/CONFIG
 # Create and install (or just install)
 # databases, templates, substitutions like this
 
-DB += subRec.db
-DB += bsaTest.db
+#DB += subRec.db
+#DB += bsaTest.db
 
 
 
@@ -51,7 +51,7 @@ DB_INSTALLS += $(TPRTRIGGER)/db/tprTrig.db
 DB_INSTALLS += $(TPRPATTERN)/db/tprPattern.db
 
 # Install Database for BSA
-DB_INSTALLS += $(EVENT)/db/bsaATTREdef.db
+#DB_INSTALLS += $(EVENT)/db/bsaATTREdef.db
 
 # =======================================================================
 
