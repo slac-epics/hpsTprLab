@@ -62,7 +62,7 @@ EvrV2TriggerReg: &EvrV2TriggerReg
       class: IntField
       name: ComplEn
       sizeBits: 1
-      lsBit: 5
+      lsBit: 4
       mode: RW
       description: Enable complementary trigger outputs
     #########################################################  
