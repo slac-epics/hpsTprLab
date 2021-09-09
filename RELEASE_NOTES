@@ -11,6 +11,8 @@
 #
 
 R1.0.0     Sep 8, 2021   Kukhee Kim (khkim)
+           - use PCIe TPR firmware d381d3e
+
            - prepare initial release (support both PCIe TPR and ATCA Timing Core)
            - support firmware (PCIe TPR) d381d3e
 
