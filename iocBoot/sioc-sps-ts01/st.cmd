@@ -81,10 +81,6 @@ dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_PV}:")
 # =================================
 # Load YAML
 # =================================
-#cd yamlConfig_0x0000000D-20170322125042
-#cd yamlConfig_0x0000000D-20170412114921
-#cd yamlConfig_0x0000000E-20170416145959
-#cd yamlConfig_0x0000000E-20170420000855
 #cd yaml
 cd EvrCardG2_project_slotA.yaml
 cpswLoadYamlFile("000TopLevel.yaml", "MemDev", "", "". "root_0")
@@ -120,8 +116,3 @@ caPutLogShow(2)
 ## Start any sequence programs
 #seq sncExample,"user=khkimHost"
 
-
-epicsThreadSleep(1.)
-#registerFiducialTest2Function
-#registerEdefTestFunction
-#registerBsaCallbackFunction
