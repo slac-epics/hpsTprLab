@@ -10,6 +10,17 @@
 #--------------------------------------------------------------
 #
 
+R1.0.1     Sep 9, 2021   Kukhee Kim (khkim)
+           - clean up yaml directories and move yaml director into $(TOP)/firmware/$(hash)/yaml
+           - add 001TopLevel.yaml file for slot_b PCIe TPR
+             -------------------------------------------------------
+             Top level yaml       PCIe TPR         device file path
+             -------------------------------------------------------
+             000TopLevel.yaml     1st instance      /dev/tpra
+             001TopLevel.yaml     2nd instance      /dev/tprb
+             -------------------------------------------------------
+           (remarks) need to improve cpsw/framework to allow overrride 000Toplevel.yaml for the PCIe TPR device file name
+
 R1.0.0     Sep 8, 2021   Kukhee Kim (khkim)
            - use PCIe TPR firmware d381d3e
 
