@@ -21,6 +21,7 @@ epicsEnvSet("ENGINEER","Kukhee Kim")
 epicsEnvSet("LOCATION","TID B84")
 epicsEnvSet("IOC_PV", "SIOC:B84:TS61")
 epicsEnvSet("IOC",    "sioc-b84-ts61")
+epicsEnvSet("HASH",   "pcie-hash-d381d3e")
 
 # tag log messages with IOC name
 # How to escape the "ioctpg" as the PERL program
@@ -82,16 +83,16 @@ dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_PV}:")
 # =================================
 # Load YAML
 # =================================
-#cd yamlConfig_0x0000000D-20170322125042
-#cd yamlConfig_0x0000000D-20170412114921
-#cd yamlConfig_0x0000000E-20170416145959
-#cd yamlConfig_0x0000000E-20170420000855
-#cd yaml
-cd EvrCardG2_project_slotA.yaml
-cpswLoadYamlFile("000TopLevel.yaml", "MemDev", "", "". "root_0")
-cd ${TOP}
-cd EvrCardG2_project_slotB.yaml
-cpswLoadYamlFile("000TopLevel.yaml", "MemDev", "", "". "root_1")
+# set up yaml directory and yaml file
+epicsEnvSet("YAML_DIR",      "${TOP}/firmware/${HASH}/yaml")
+epicsEnvSet("YAML_TOP_FILE", "${YAML_DIR}/000TopLevel.yaml")
+
+# use slot A pcie tpr for root_0, override to use slot_a
+cpswLoadYamlFile("${YAML_TOP_FILE}", "MemDev", "", "". "root_0")
+
+# use slot B pcie tpr for root_1, override to use slot_b
+epicsEnvSet("YAML_TOP_FILE_SLOTB",       "${YAML_DIR}/001TopLevel.yaml")
+cpswLoadYamlFile("${YAML_TOP_FILE_SLOTB}", "MemDev", "", "". "root_1")
 
 # ===================================
 # Load configuration from YAML file
@@ -111,12 +112,6 @@ crossbarControlAsynDriverConfigure("crossbar1", "PCIe:/mmio/SfpXbar", "root_1")
 # Since the crossbar driver has been developed for the ATCA system
 # the crossbar options have different meaning on PCIe TPR
 # Please, just set up as the followings to make PCIe TPR works
-
-# crossbarControl("BP",      "LCLS1", "root_0")
-# crossbarControl("RTM_OUT1", "FPGA", "root_0")
-
-# crossbarControl("BP",      "LCLS1", "root_1")
-# crossbarControl("RTM_OUT1", "FPGA", "root_1")
 
 
 # ====================================

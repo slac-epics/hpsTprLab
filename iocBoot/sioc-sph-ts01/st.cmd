@@ -21,6 +21,7 @@ epicsEnvSet("ENGINEER","Kukhee Kim")
 epicsEnvSet("LOCATION","SPH")
 epicsEnvSet("IOC_PV", "SIOC:SPH:TS01")
 epicsEnvSet("IOC",    "sioc-sph-ts01")
+epicsEnvSet("HASH",   "pcie-hash-d381d3e")
 
 # tag log messages with IOC name
 # How to escape the "ioctpg" as the PERL program
@@ -81,10 +82,10 @@ dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_PV}:")
 # =================================
 # Load YAML
 # =================================
-#cd yaml
-cd EvrCardG2_project_slotA.yaml
-cpswLoadYamlFile("000TopLevel.yaml", "MemDev", "", "". "root_0")
-
+# set up yaml directory and yaml file
+epicsEnvSet("YAML_DIR",      "${TOP}/firmware/${HASH}/yaml")
+epicsEnvSet("YAML_TOP_FILE", "${YAML_DIR}/000TopLevel.yaml")
+cpswLoadYamlFile("${YAML_TOP_FILE}", "MemDev", "", "". "root_0")
 
 cd ${TOP}
 
