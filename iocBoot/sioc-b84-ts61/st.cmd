@@ -88,11 +88,10 @@ epicsEnvSet("YAML_DIR",      "${TOP}/firmware/${HASH}/yaml")
 epicsEnvSet("YAML_TOP_FILE", "${YAML_DIR}/000TopLevel.yaml")
 
 # use slot A pcie tpr for root_0, override to use slot_a
-cpswLoadYamlFile("${YAML_TOP_FILE}", "MemDev", "", "". "root_0")
+cpswLoadYamlFile("${YAML_TOP_FILE}", "MemDev", "", "/dev/tpra", "root_0")
 
 # use slot B pcie tpr for root_1, override to use slot_b
-epicsEnvSet("YAML_TOP_FILE_SLOTB",       "${YAML_DIR}/001TopLevel.yaml")
-cpswLoadYamlFile("${YAML_TOP_FILE_SLOTB}", "MemDev", "", "". "root_1")
+cpswLoadYamlFile("${YAML_TOP_FILE}", "MemDev", "", "/dev/tprb", "root_1")
 
 # ===================================
 # Load configuration from YAML file
