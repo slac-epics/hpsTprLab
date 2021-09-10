@@ -10,6 +10,15 @@
 #--------------------------------------------------------------
 #
 
+R1.0.2     Sep 10, 2021
+           - build against yamlLoader R2.2.0, for overriding device file name for multiple PCIe TPR instances
+             ex) ioc-b84-ts61,    multiple PCIe TPR instances and device file overriding
+                 ioc-diag0-ts01,  single PCIe TPR instances, no overriding for the deivce file
+           - build against
+                 tprTrigger R2.4.0
+                 tprPattern R2.2.0
+                 ATCACommon R1.3.0-BR-R5
+
 R1.0.1     Sep 9, 2021   Kukhee Kim (khkim)
            - clean up yaml directories and move yaml director into $(TOP)/firmware/$(hash)/yaml
            - add 001TopLevel.yaml file for slot_b PCIe TPR
