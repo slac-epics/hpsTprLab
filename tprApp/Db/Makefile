@@ -45,6 +45,8 @@ DB_INSTALLS += $(AUTOSAVE)/db/save_restoreStatus.db
 # Install Database for tprTrigger module
 
 DB_INSTALLS += $(TPRTRIGGER)/db/tprTrig.db
+DB_INSTALLS += $(TPRTRIGGER)/db/tprTrig_ued.db
+DB_INSTALLS += $(TPRTRIGGER)/db/tprTrig_smrf.db
 
 # Install Database for tprPattern module
 
