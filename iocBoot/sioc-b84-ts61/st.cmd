@@ -49,8 +49,8 @@ epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "2000000")
 # TPR driver DB
  
 
-dbLoadRecords("db/tprTrig.db",     "DEV=${IOC_PV}:0,LOCA=B84,IOC_UNIT=TS61,INST=0,PORT=trig0")
-dbLoadRecords("db/tprTrig.db",     "DEV=${IOC_PV}:1,LOCA=B84,IOC_UNIT=TS61,INST=1,PORT=trig1")
+dbLoadRecords("db/tprTrig_ued.db",     "DEV=${IOC_PV}:0,LOCA=B84,IOC_UNIT=TS61,INST=0,PORT=trig0")
+dbLoadRecords("db/tprTrig_ued.db",     "DEV=${IOC_PV}:1,LOCA=B84,IOC_UNIT=TS61,INST=1,PORT=trig1")
 
 
 # =====================================================================
