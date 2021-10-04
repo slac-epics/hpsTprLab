@@ -22,7 +22,7 @@ EvrV2CoreChan: &EvrV2CoreChan
       at:
         offset: 0x00000000
         stride: 0x00001000
-        nelms: 12
+        nelms: 14
     Triggers:
       <<: *EvrV2TriggerReg
       at:
