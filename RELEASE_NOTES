@@ -10,6 +10,13 @@
 #--------------------------------------------------------------
 #
 
+R1.1.0     Sep 14, 2021
+           IMPORTANT: please, do not try this version before upgrading TPG to R1.13.0 or later
+           - using descedning order divisors (TPG R1.13.0 or later)
+           - apply UED template for sioc-b84-ts61, UED test stand
+           - build with tprTrigger R2.5.1
+           
+
 R1.0.2     Sep 10, 2021
            - build against yamlLoader R2.2.0, for overriding device file name for multiple PCIe TPR instances
              ex) ioc-b84-ts61,    multiple PCIe TPR instances and device file overriding
