@@ -9,6 +9,9 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 #
+R1.1.1     Nov 10, 2021   Justin Chen (justinc)
+           - build with tprTrigger R2.5.4
+
 
 R1.1.0     Sep 14, 2021
            IMPORTANT: please, do not try this version before upgrading TPG to R1.13.0 or later
