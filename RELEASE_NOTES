@@ -9,6 +9,9 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 #
+R1.1.2     Nov 11, 2021   Justin Chen (justinc)
+           - build with tprTrigger R2.5.5, updated configure/RELEASE.local
+
 R1.1.1     Nov 10, 2021   Justin Chen (justinc)
            - build with tprTrigger R2.5.4
 
