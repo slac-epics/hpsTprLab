@@ -10,6 +10,14 @@
 #--------------------------------------------------------------
 #
 
+R1.1.0-1.0   Nov 22, 2021 Kukhee Kim (khkim)
+             - build against asyn R4.39-1.0.1
+             - build against yamlDonwloader R1.2.2
+             - build against yamlLoader R2.2.0
+             - build against ATCACommon R1.6.1
+             - build against tprPattern R2.3.2
+             - build against tprTrigger R2.5.3-1.0
+
 R1.1.0-br  Nov 22, 2021  KUkhee Kim (khkim)
            - branch out from R1.1.0
 
