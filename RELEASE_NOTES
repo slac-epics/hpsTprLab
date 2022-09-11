@@ -10,6 +10,29 @@
 #--------------------------------------------------------------
 #
 
+R1.1.0-1.0-1     Sep 10, Kukhee Kim (khkim)
+             - PCIe TPR test for generaltime and timingApi
+             - build against timing/hpsTpr R2.2.0
+             - build against imingApi      R0.9
+             - build against tprTrigger    R2.5.3-3.0
+             - sioc-b84-ts61
+               . maste mode use 2 PCIe TPR, /dev/tpra and /dev/tprb
+               . /dev/tpra support 360Hz event callback and lower event code [1..255]  for LCLS1
+               . test code for timestamp alignment using general time
+               . test code for EVNT, TSEL behaviors
+               . test code for timing queue api
+               . test code for event callback
+             - sioc-b84-ts62
+               . slave mode using /dev/tpra
+               . test code for timestamp alignment using general time
+               . test code for EVNT, TSEL behaviors
+               . test code for timing queue api
+               . test code for event callback
+
+
+R1.1.0-1.0-pcieTpr    Kukhee Kim
+             - brach out from R1.1.0-1.0 to test PCIeTPR with generaltime and timingApi
+
 R1.1.0-1.0   Nov 22, 2021 Kukhee Kim (khkim)
              - build against asyn R4.39-1.0.1
              - build against yamlDonwloader R1.2.2
