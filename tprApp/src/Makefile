@@ -52,10 +52,12 @@ tpr_DBD += yamlLoader.dbd
 # DBD files for tprTrigger and tprPattern
 tpr_DBD += crossbarControl.dbd
 tpr_DBD += tprTriggerAsynDriver.dbd
+tpr_DBD += dbSub.dbd
 
 # ======================================================================
 # <name>_registerRecordDeviceDriver.cpp will be created from <name>.dbd
 tpr_SRCS += tpr_registerRecordDeviceDriver.cpp
+tpr_SRCS += dbSub.db
 
 tpr_SRCS_DEFAULT += tprMain.cpp
 

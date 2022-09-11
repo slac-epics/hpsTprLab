@@ -1,0 +1,23 @@
+record(sub, "$(user):EVTS$(N)")
+{
+    field(INPA, "$(N)")
+    field(INPB, "1")
+    field(SCAN, "Event")
+    field(INAM, "myInit")
+    field(SNAM, "mySub")
+#    field(TSE,  "$(N)")
+    field(TSE, "-2")
+    field(EVNT, "$(N)")
+}
+
+record(sub, "$(user):CBTS$(N)")
+{
+    field(INPA, "$(N)")
+    field(INPB, "1")
+    field(SCAN, "Event")
+    field(INAM, "myCbSubInit")
+    field(SNAM, "myCbSub")
+#    field(TSE,  "$(N)")
+    field(TSE, "-1")
+    field(EVNT, "$(N)")
+}
