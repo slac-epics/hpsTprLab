@@ -15,12 +15,7 @@ include $(TOP)/configure/CONFIG
 #DB += bsaTest.db
 
 
-
-
-
-
-
-
+DB += evTSTest.db
 
 
 # Install Common databases needed by All IOCs
@@ -43,7 +38,8 @@ DB_INSTALLS += $(AUTOSAVE)/db/save_restoreStatus.db
 
 
 # Install Database for tprTrigger module
-
+DB_INSTALLS += $(TPRTRIGGER)/db/pcie_tprTrig.db
+DB_INSTALLS += $(TPRTRIGGER)/db/pcieSlave_tprTrig.db
 DB_INSTALLS += $(TPRTRIGGER)/db/tprTrig.db
 DB_INSTALLS += $(TPRTRIGGER)/db/tprTrig_ued.db
 DB_INSTALLS += $(TPRTRIGGER)/db/tprTrig_smrf.db
