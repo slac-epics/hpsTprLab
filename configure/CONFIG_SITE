@@ -14,7 +14,7 @@
 # Set CHECK_RELEASE to NO to disable checking completely.
 # Set CHECK_RELEASE to WARN to perform consistency checking but
 #   continue building anyway if conflicts are found.
-CHECK_RELEASE = YES
+#CHECK_RELEASE = YES
 
 # Set this when you only want to compile this application
 #   for a subset of the cross-compiled target architectures
@@ -85,7 +85,7 @@ BOOST_INCLUDE      = $(BOOST_TOP)/$(PKG_ARCH)/include
 
 # HPS TPR API
 HPSTPR_PACKAGE_NAME=timing/hpsTpr
-HPSTPR_VERSION=R2.0.1
+HPSTPR_VERSION=R2.2.0
 HPSTPR_TOP=$(PACKAGE_SITE_TOP)/$(HPSTPR_PACKAGE_NAME)/$(HPSTPR_VERSION)
 HPSTPR_LIB=$(HPSTPR_TOP)/$(PKG_ARCH)/lib
 HPSTPR_INCLUDE=$(HPSTPR_TOP)/$(PKG_ARCH)/include
