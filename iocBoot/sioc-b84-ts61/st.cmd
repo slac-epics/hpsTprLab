@@ -21,7 +21,7 @@ epicsEnvSet("ENGINEER","Kukhee Kim")
 epicsEnvSet("LOCATION","TID B84")
 epicsEnvSet("IOC_PV", "SIOC:B84:TS61")
 epicsEnvSet("IOC",    "sioc-b84-ts61")
-epicsEnvSet("HASH",   "pcie-hash-d381d3e")
+epicsEnvSet("HASH",   "pcie-hash-968bb5f")
 
 # tag log messages with IOC name
 # How to escape the "ioctpg" as the PERL program
@@ -49,8 +49,12 @@ epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "2000000")
 # TPR driver DB
  
 
-dbLoadRecords("db/tprTrig_ued.db",     "DEV=${IOC_PV}:0,LOCA=B84,IOC_UNIT=TS61,INST=0,PORT=trig0")
-dbLoadRecords("db/tprTrig_ued.db",     "DEV=${IOC_PV}:1,LOCA=B84,IOC_UNIT=TS61,INST=1,PORT=trig1")
+dbLoadRecords("db/pcie_tprTrig.db",     "DEV=${IOC_PV}:0,LOCA=B84,IOC_UNIT=TS61,INST=0,PORT=trig0")
+dbLoadRecords("db/pcie_tprTrig.db",     "DEV=${IOC_PV}:1,LOCA=B84,IOC_UNIT=TS61,INST=1,PORT=trig1")
+
+dbLoadRecords("db/evTSTest.db", "user=${IOC_PV},N=1000")
+dbLoadRecords("db/evTSTest.db", "user=${IOC_PV},N=1001")
+dbLoadRecords("db/evTSTest.db", "user=${IOC_PV},N=1002")
 
 
 # =====================================================================
@@ -118,6 +122,7 @@ crossbarControlAsynDriverConfigure("crossbar1", "PCIe:/mmio/SfpXbar", "root_1")
 # ====================================
 tprTriggerAsynDriverConfigure("trig0", "PCIe:/mmio", "root_0")
 tprTriggerAsynDriverConfigure("trig1", "PCIe:/mmio", "root_1")
+
 
 
 # ====================================
