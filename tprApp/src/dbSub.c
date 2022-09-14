@@ -44,6 +44,36 @@ static long mySub(subRecord *prec)
 }
 
 
+
+typedef struct {
+    EventTimingData  data;
+    unsigned         dp[64];
+} myData2_t;
+
+
+static long myInit2(subRecord *prec)
+{
+    myData2_t * p = malloc(sizeof(myData2_t));
+    prec->dpvt    = (void *) p;
+
+    return 0;
+}
+
+
+static long mySub2(subRecord *prec)
+{
+    myData2_t *p = (myData2_t *) prec->dpvt;
+    int       ev = (int) prec->a;
+
+    timingEntryRead(ev, (void *) &p->dp[0], &p->data);
+
+  
+    prec->time  = p->data.fifo_time;
+    prec->val   = p->dp[0];
+}
+
+
+
 static long _mySub(subRecord *prec)
 {
      
@@ -112,5 +142,7 @@ static long myCbSub(subRecord *prec)
 
 epicsRegisterFunction(myInit);
 epicsRegisterFunction(mySub);
+epicsRegisterFunction(myInit2);
+epicsRegisterFunction(mySub2);
 epicsRegisterFunction(myCbSubInit);
 epicsRegisterFunction(myCbSub);

@@ -1,4 +1,6 @@
 function(myInit)
 function(mySub)
+function(myInit2)
+function(mySub2)
 function(myCbSubInit)
 function(myCbSub)
