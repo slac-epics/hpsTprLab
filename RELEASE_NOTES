@@ -9,6 +9,10 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 #
+R1.1.0-1.0-2     Sep 14, Kukhee Kim (khkim)
+             - build against timing/hpsTpr R2.3.0
+             - build against tprTrigger    R2.5.3-4.0
+
 
 R1.1.0-1.0-1     Sep 10, Kukhee Kim (khkim)
              - PCIe TPR test for generaltime and timingApi
