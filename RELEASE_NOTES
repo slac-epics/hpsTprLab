@@ -9,6 +9,22 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 #
+
+R1.1.0-1.0-4    Feb 6, 2025   Kukhee Kim (khkim)
+             - reverting enum for trigger rate for UED TPR
+               to align with other project (lower rate to higher rate)
+             - build against recent API and modules
+                   hpsTpr        R2.5.0
+                   commonATCA    R2.0.0
+                   yamlLoader    R2.3.5
+                   tprTrigger    R2.5.3-4.0-3
+                   ATCACommon    R2.0.1
+
+
+R1.1.0-1.0-3     Kukhee Kim (khkim)
+             - current operational version in UED (present Feb 6, 2025)
+
+
 R1.1.0-1.0-2     Sep 14, Kukhee Kim (khkim)
              - build against timing/hpsTpr R2.3.0
              - build against tprTrigger    R2.5.3-4.0
